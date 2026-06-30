@@ -20,7 +20,6 @@ const theBookConnectDB = {
             author: "Helen Oyeyemi",
             coverImage: "images/books/what-is-not-yours.jpg",
             genre: "Literary Fiction",
-            blurb: "insert blurb",
             tags: ["Must Read", "Surreal"]
         },
         {
@@ -29,7 +28,6 @@ const theBookConnectDB = {
             author: "Eloghosa Osunde",
             coverImage: "images/books/vagabonds.jpg",
             genre: "Literary Fiction",
-            blurb: "insert blurb",
             tags: ["Award Winner", "Lagos"]
         },
         {
@@ -38,7 +36,6 @@ const theBookConnectDB = {
             author: "Kopano Matlwa",
             coverImage: "images/books/bosadi.jpg",
             genre: "Literary Fiction",
-            blurb: "insert blurb",
             tags: ["New Release", "South African"]
         },
         {
@@ -47,7 +44,6 @@ const theBookConnectDB = {
             author: "Yaa Gyasi",
             coverImage: "images/books/transcendent-kingdom.jpg",
             genre: "Literary Fiction",
-            blurb: "insert blurb",
             tags: ["Bestseller", "Diaspora"]
         },
         {
@@ -56,7 +52,6 @@ const theBookConnectDB = {
             author: "Ayòbámi Adébáyò",
             coverImage: "images/books/stay-with-me.jpg",
             genre: "Literary Fiction",
-            blurb: "insert blurb",
             tags: ["Book Club Pick"]
         },
 
@@ -79,7 +74,6 @@ const theBookConnectDB = {
             author: "Nnedi Okorafor",
             coverImage: "images/books/who-fears-death.jpg",
             genre: "Fantasy",
-            blurb: "insert blurb",
             tags: ["Sci-Fantasy", "Award Winner"]
         },
         {
@@ -88,7 +82,6 @@ const theBookConnectDB = {
             author: "Tomi Adeyemi",
             coverImage: "images/books/children-of-blood.jpg",
             genre: "Fantasy",
-            blurb: "insert blurb",
             tags: ["Epic Fantasy", "Bestseller"]
         },
         {
@@ -97,7 +90,6 @@ const theBookConnectDB = {
             author: "Lauren Beukes",
             coverImage: "images/books/zoo-city.jpg",
             genre: "Fantasy",
-            blurb: "insert blurb",
             tags: ["Urban Fantasy", "Jozi"]
         },
         {
@@ -106,7 +98,6 @@ const theBookConnectDB = {
             author: "Evan Winter",
             coverImage: "images/books/the-rage-of-dragons.jpg",
             genre: "Fantasy",
-            blurb: "insert blurb",
             tags: ["High Fantasy", "Action"]
         },
         {
@@ -115,7 +106,6 @@ const theBookConnectDB = {
             author: "Suyi Davies Okungbowa",
             coverImage: "images/books/son-of-the-storm.jpg",
             genre: "Fantasy",
-            blurb: "insert blurb",
             tags: ["Epic Fantasy"]
         },
 
@@ -141,7 +131,6 @@ const theBookConnectDB = {
             author: "Lauren Beukes",
             coverImage: "images/books/shining-girls.jpg",
             genre: "Horror/Thriller",
-            blurb: "insert blurb",
             tags: ["Time Travel", "Thriller"]
         },
         {
@@ -150,7 +139,6 @@ const theBookConnectDB = {
             author: "Oyinkan Braithwaite",
             coverImage: "images/books/my-sister-the.jpg",
             genre: "Horror/Thriller",
-            blurb: "insert blurb",
             tags: ["Satire", "Bestseller"]
         },
         {
@@ -159,7 +147,6 @@ const theBookConnectDB = {
             author: "T.L. Huchu",
             coverImage: "images/books/library-of-the-dead.jpg",
             genre: "Horror/Thriller",
-            blurb: "Rinsert blurb",
             tags: ["Dark Fantasy", "Mystery"]
         },
         {
@@ -168,7 +155,6 @@ const theBookConnectDB = {
             author: "Tade Thompson",
             coverImage: "images/books/rosewater.jpg",
             genre: "Horror/Thriller",
-            blurb: "insert blurb",
             tags: ["Sci-Fi Thriller", "Alien"]
         },
         {
@@ -177,7 +163,6 @@ const theBookConnectDB = {
             author: "Nicky Drayden",
             coverImage: "images/books/prey-of-gods.jpg",
             genre: "Horror/Thriller",
-            blurb: "insert blurb",
             tags: ["Sci-Fi Horror"]
         },
 
@@ -189,7 +174,6 @@ const theBookConnectDB = {
             author: "Olivette Otele",
             coverImage: "images/books/african-europeans.jpg",
             genre: "Non-Fiction",
-            blurb: "insert blurb",
             tags: ["History", "Identity"]
         },
         {
@@ -216,7 +200,6 @@ const theBookConnectDB = {
             author: "Walter Rodney",
             coverImage: "images/books/decolonial-marxism.jpg",
             genre: "Non-Fiction",
-            blurb: "insert blurb",
             tags: ["Politics", "Essays"]
         },
         {
@@ -225,7 +208,6 @@ const theBookConnectDB = {
             author: "Walter Rodney",
             coverImage: "images/books/how-europe-underdeveloped.jpg",
             genre: "Non-Fiction",
-            blurb: "insert blurb",
             tags: ["Essential", "Economics"]
         },
         {
@@ -234,7 +216,6 @@ const theBookConnectDB = {
             author: "Frantz Fanon",
             coverImage: "images/books/the-wretched.jpg",
             genre: "Non-Fiction",
-            blurb: "insert blurb",
             tags: ["Philosophy", "Revolution"]
         },
         {
@@ -243,7 +224,6 @@ const theBookConnectDB = {
             author: "bell hooks",
             coverImage: "images/books/the-will-to-change.jpg",
             genre: "Non-Fiction",
-            blurb: "insert blurb",
             tags: ["Gender", "Culture"]
         }
     ],
