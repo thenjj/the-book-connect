@@ -21,3 +21,9 @@ body {
 
 .form-group button {
   margin-top: 15px; }
+
+.navbar-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem; /* Makes it a bit bigger since Bebas Neue is naturally narrow */
+    letter-spacing: 1px; /* Adds a clean, premium spacing between the letters */
+}

@@ -27,7 +27,7 @@ const theBookConnectDB = {
             id: "lit-3",
             title: "Vagabonds!",
             author: "Eloghosa Osunde",
-            coverImage: "images/books/vagabonds",
+            coverImage: "images/books/vagabonds.jpg",
             genre: "Literary Fiction",
             blurb: "insert blurb",
             tags: ["Award Winner", "Lagos"]
