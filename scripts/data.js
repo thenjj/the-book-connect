@@ -252,7 +252,7 @@ const theBookConnectDB = {
         name: "Kgosi Readers",
         location: "Online",
         genres: ["Literary", "Contemporary"],
-        image: "images/book-clubs/kgosi-readers.jpg",
+        image: "images/book-clubs/kgosi-readers.png",
     },
     {
         id: "club-4",

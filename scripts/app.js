@@ -1,4 +1,5 @@
-// Function to render books into their respective grid layout rows
+// book display render
+
 function displayBooks() {
     const litRow = document.getElementById('literary-fiction-row');
     const fanRow = document.getElementById('fantasy-row');
@@ -17,7 +18,6 @@ function displayBooks() {
     theBookConnectDB.books.forEach(book => {
         const firstTag = (book.tags && book.tags.length > 0) ? book.tags[0] : 'Curated';
 
-        // CRITICAL FIX: Wrapped ${book.id} in single quotes so strings like 'lit-1' pass safely without crashing
         const cardHTML = `
             <div class="col" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#bookDetailModal" onclick="populateModalData('${book.id}')">
                 <div class="card h-100 shadow-sm border-0 bg-light">
@@ -45,9 +45,8 @@ function displayBooks() {
     });
 }
 
-// Fixed populator that matches matching string IDs precisely
 function populateModalData(bookId) {
-    // Search the database treating IDs perfectly as string references
+
     const clickedBook = theBookConnectDB.books.find(b => String(b.id) === String(bookId));
     
     if (!clickedBook) {
@@ -63,3 +62,81 @@ function populateModalData(bookId) {
 }
 
 displayBooks();
+
+// book club search function
+
+function setupClubSearch() {
+    const searchInput = document.getElementById('navSearchInput');
+    const searchDropdown = document.getElementById('searchDropdownPreview');
+
+    if (!searchInput || !searchDropdown) return;
+
+    searchInput.addEventListener('input', function() {
+        const query = searchInput.value.toLowerCase().trim();
+
+        if (query.length === 0) {
+            searchDropdown.classList.add('d-none');
+            searchDropdown.innerHTML = '';
+            return;
+        }
+
+        const clubMatches = theBookConnectDB.bookClubs.filter(club => {
+            const clubName = club.name || club.title || "";
+            const clubDesc = club.description || club.blurb || "";
+            const clubLocation = club.location || ""; 
+            
+            return clubName.toLowerCase().includes(query) || 
+                   clubDesc.toLowerCase().includes(query) ||
+                   clubLocation.toLowerCase().includes(query);
+        });
+
+        if (clubMatches.length === 0) {
+            searchDropdown.innerHTML = '<div class="p-2 text-muted small">No book clubs found...</div>';
+            searchDropdown.classList.remove('d-none');
+            return;
+        }
+
+        let dropdownHTML = '';
+        clubMatches.forEach(club => {
+            const name = club.name || club.title || "Unnamed Club";
+            const image = club.image || club.coverImage || "images/club-placeholder.jpg"; 
+
+            let genreText = "General";
+            if (club.genres && club.genres.length > 0) {
+                genreText = club.genres.join(', ');
+            } else if (club.genre) {
+                genreText = club.genre;
+            }
+
+            dropdownHTML += `
+                <a href="#" class="d-flex align-items-center p-2 text-decoration-none text-dark border-bottom" 
+                   style="font-size: 0.85rem;" 
+                   onclick="triggerClubAction('${club.id}')">
+                    <img src="${image}" style="width: 40px; height: 40px; object-fit: cover;" class="me-2 rounded-circle">
+                    <div class="text-truncate">
+                        <div class="fw-bold text-truncate">${name}</div>
+                        <div class="text-secondary small text-truncate">${genreText}</div>
+                    </div>
+                </a>
+            `;
+        });
+
+        searchDropdown.innerHTML = dropdownHTML;
+        searchDropdown.classList.remove('d-none');
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
+            searchDropdown.classList.add('d-none');
+        }
+    });
+}
+
+function triggerClubAction(clubId) {
+    document.getElementById('searchDropdownPreview').classList.add('d-none');
+    document.getElementById('navSearchInput').value = '';
+    
+    alert("Navigating to Book Club ID: " + clubId);
+}
+
+setupClubSearch();

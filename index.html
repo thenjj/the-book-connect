@@ -66,16 +66,11 @@
       </ul>
 
       <div class="dropdown">
-        <form class="d-flex" role="search" onsubmit="event.preventDefault();">
-          <input 
-            class="form-control me-2" 
-            type="search" 
-            id="navSearchInput" 
-            placeholder="Search cities or clubs..." 
-            aria-label="Search"
-            autocomplete="off"
-            style="width: 250px;"
-          >
+        <form class="d-flex position-relative" style="width: 250px;" onsubmit="event.preventDefault();">
+          <input class="form-control me-2" type="search" placeholder="Search books..." id="navSearchInput" autocomplete="off">
+  
+          <div id="searchDropdownPreview" class="position-absolute w-100 bg-white border rounded shadow mt-5 d-none" style="z-index: 1050; max-height: 300px; overflow-y: auto; top: 0; left: 0;">
+        </div>
         </form>
         
         <ul class="dropdown-menu dropdown-menu-end w-100 mt-1" id="searchSuggestions" style="max-height: 300px; overflow-y: auto;">
