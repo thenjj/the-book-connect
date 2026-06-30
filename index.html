@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>The Book Connect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Markup Kick Start">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Markup Kick Start">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#ff0000">
+
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#ff0000">
+
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/css/app.css">
+    
+</head> 
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3">
+    <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-success" href="index.html">The Book Connect</a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="club-detail.html">Bookclubs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="admin.html">Settings</a>
+        </li>
+      </ul>
+
+      <div class="dropdown">
+        <form class="d-flex" role="search" onsubmit="event.preventDefault();">
+          <input 
+            class="form-control me-2" 
+            type="search" 
+            id="navSearchInput" 
+            placeholder="Search cities or clubs..." 
+            aria-label="Search"
+            autocomplete="off"
+            style="width: 250px;"
+          >
+        </form>
+        
+        <ul class="dropdown-menu dropdown-menu-end w-100 mt-1" id="searchSuggestions" style="max-height: 300px; overflow-y: auto;">
+          </ul>
+      </div>
+
+    </div>
+    </div>
+    </nav>
+
+    <p>hello world ig</p>
+
+    <footer class="bg-dark text-light py-4 mt-5 border-top border-secondary">
+        <div class="container">
+            <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                <small class="text-secondary">&copy; 2026 <span class="text-success fw-bold">The Book Connect</span>. All rights reserved.</small>
+            </div>
+
+            <div class="col-md-6 text-center text-md-end">
+                <small class="text-secondary">Centering and promoting African literature, one community at a time.</small>
+            </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>
