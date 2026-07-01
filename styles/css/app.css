@@ -27,3 +27,43 @@ body {
     font-size: 1.8rem;
     letter-spacing: 1px;
 }
+
+.nav-tabs .nav-link {
+    color: #6c757d;
+    background: none;
+    border-bottom: 2px solid transparent !important;
+}
+.nav-tabs .nav-link.active {
+    color: #212529 !important;
+    border-bottom: 2px solid #212529 !important;
+}
+
+.home-book-cover {
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: contain !important;
+    background-color: #f8f9fa;
+}
+
+/* Mbile carousel */
+@media (max-width: 767.98px) {
+    .mobile-carousel-row {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding-bottom: 10px !important;
+    }
+
+    .mobile-carousel-row .col {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        scroll-snap-align: start !important;
+    }
+    
+    .mobile-carousel-row::-webkit-scrollbar {
+        display: none;
+    }
+}
