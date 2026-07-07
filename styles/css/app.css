@@ -1,26 +1,31 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+}
     
 body {
   background: #f3f3f3;
   margin: 0;
   padding: 0px;
-  overflow-x:hidden; }
+  overflow-x:hidden;
+}
 
 .my-class {
-  color: red; }
+  color: red;
+}
 
 .color {
   width: 100px;
   height: 100px;
   display: block;
   background: red;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+}
 
 .form-group button {
-  margin-top: 15px; }
+  margin-top: 15px;
+}
 
 .navbar-brand {
     font-family: 'Bebas Neue', sans-serif;
@@ -33,6 +38,7 @@ body {
     background: none;
     border-bottom: 2px solid transparent !important;
 }
+
 .nav-tabs .nav-link.active {
     color: #212529 !important;
     border-bottom: 2px solid #212529 !important;
@@ -45,7 +51,8 @@ body {
     background-color: #f8f9fa;
 }
 
-/* Mbile carousel */
+/* mobile carousel */
+
 @media (max-width: 767.98px) {
     .mobile-carousel-row {
         display: flex !important;

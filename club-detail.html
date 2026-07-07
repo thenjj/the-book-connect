@@ -7,259 +7,269 @@
     <title>Book Club Connect</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
-    <!-- Web Application Manifest -->
     <link rel="manifest" href="manifest.json">
 
-    <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Markup Kick Start">
-    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+    <link class="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
 
-    <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Markup Kick Start">
     <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
 
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
     <meta name="msapplication-TileColor" content="#ff0000">
 
-    <!-- Color the status bar on mobile devices -->
     <meta name="theme-color" content="#ff0000">
-
-    <!-- Styles -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/css/app.css">
-    
-</head> 
+</head>
 
 <body>
 
-    <!-- Navbar -->
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3">
-    <div class="container">
-    <a class="navbar-brand fw-bold text-success" href="index.html">The Book Connect</a>
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success" href="index.html">The Book Connect</a>
 
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="club-detail.html">Book Clubs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="admin.html">Settings</a>
-        </li>
-      </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <div class="dropdown">
-        <form class="d-flex position-relative" style="width: 250px;" onsubmit="event.preventDefault();">
-          <input class="form-control me-2" type="search" placeholder="Search books..." id="navSearchInput" autocomplete="off">
-  
-          <div id="searchDropdownPreview" class="position-absolute w-100 bg-white border rounded shadow mt-5 d-none" style="z-index: 1050; max-height: 300px; overflow-y: auto; top: 0; left: 0;">
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="club-detail.html">Book Clubs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">Settings</a>
+                    </li>
+                </ul>
+
+                <div class="dropdown">
+                    <form class="d-flex position-relative" style="width: 250px;" onsubmit="event.preventDefault();">
+                        <input class="form-control me-2" type="search" placeholder="Search books..." id="navSearchInput" autocomplete="off">
+                        <div id="searchDropdownPreview" class="position-absolute w-100 bg-white border rounded shadow mt-5 d-none" style="z-index: 1050; max-height: 300px; overflow-y: auto; top: 0; left: 0;"></div>
+                    </form>
+                    <ul class="dropdown-menu dropdown-menu-end w-100 mt-1" id="searchSuggestions" style="max-height: 300px; overflow-y: auto;"></ul>
+                </div>
+            </div>
         </div>
-        </form>
-        
-        <ul class="dropdown-menu dropdown-menu-end w-100 mt-1" id="searchSuggestions" style="max-height: 300px; overflow-y: auto;">
-          </ul>
-      </div>
-
-    </div>
-    </div>
     </nav>
 
-  <!-- Club banner -->
-
-<div id="clubHeroBanner" class="position-relative text-white rounded overflow-hidden mb-4 shadow" 
-     style="min-height: 250px; background-size: cover; background-position: center; background-repeat: no-repeat; background-color: #212529;">
-  
-  <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to right, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.4) 100%); z-index: 1;"></div>
-  
-  <div class="position-relative d-flex align-items-center p-4 p-md-5" style="z-index: 2; min-height: 250px;">
-    <div class="w-100">
-      <!-- genres -->
-      <div id="clubGenreBadges" class="mb-2"></div>
-      
-      <!-- club title -->
-      <h1 id="clubHeroName" class="display-5 fw-bold mb-2">Book Club Title</h1>
-      
-      <!-- location -->
-      <div class="d-flex align-items-center text-light opacity-75 fs-5">
-        <span id="clubHeroLocation">Club Location</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- currently reading section -->
-<div class="row mb-5">
-  <div class="col-12">
-    <h3 class="h4 fw-bold mb-3 text-secondary text-uppercase tracking-wider ps-3 pt-2" style="font-size: 0.9rem;">Currently Reading</h3>
-  
-    <div id="currentBookCard" class="card shadow-sm border-0 overflow-hidden bg-light" style="display: none;">
-      <div class="row g-0">
-        <div class="col-md-3 col-lg-2 d-flex align-items-center justify-content-center p-3 bg-white border-end">
-          <img id="currentBookCover" src="" alt="Book Cover" class="img-fluid rounded shadow-sm" style="max-height: 200px; object-fit: contain;">
-        </div>
-        
-        <div class="col-md-9 col-lg-10 p-4 d-flex flex-column justify-content-between">
-          <div>
-            <h4 id="currentBookTitle" class="h3 fw-bold text-dark mb-1">Book Title</h4>
-            <p id="currentBookAuthor" class="fs-5 text-muted mb-3">by Author Name</p>
-            <p id="currentBookDescription" class="text-secondary mb-4 leading-relaxed">This is where the detailed book description summary text will be dynamically injected...</p>
-          </div>
-          
-          <div class="d-flex flex-wrap gap-3 align-items-center border-top pt-3 text-secondary small">
-            <div class="d-flex align-items-center">
-              <span class="fw-bold text-dark me-2">Next Meeting:</span>
-              <span id="currentBookMeeting">Meeting Details Placeholder</span>
+    <div id="clubHeroBanner" class="position-relative text-white rounded-bottom overflow-hidden mb-4 shadow" style="min-height: 250px; background-size: cover; background-position: center; background-repeat: no-repeat; background-color: #212529;">
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to right, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.4) 100%); z-index: 1;"></div>
+        <div class="position-relative d-flex align-items-center p-4 p-md-5" style="z-index: 2; min-height: 250px;">
+            <div class="w-100">
+                <div id="clubGenreBadges" class="mb-2"></div>
+                <h1 id="clubHeroName" class="display-5 fw-bold mb-2">Book Club Title</h1>
+                <div class="d-flex align-items-center text-light opacity-75 fs-5">
+                    <span id="clubHeroLocation">Club Location</span>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
 
-    <div id="noBookFallback" class="p-4 text-center bg-light rounded text-muted" style="display: none;">
-      This club is not currently reading a book. Check back soon!
-    </div>
-  </div>
-</div>
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="h4 fw-bold mb-3 text-secondary text-uppercase tracking-wider ps-3 pt-2" style="font-size: 0.9rem;">Currently Reading</h3>
 
-    <!-- chat hub -->
-<div class="row mb-5">
-  <div class="col-12 px-5">
-    
-    <!-- tab controls -->
-    <ul class="nav nav-tabs mb-3 border-0 ps-3" id="chatTabs" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active fw-bold border-0 text-uppercase tracking-wider py-2 px-3 small" id="comms-tab" data-bs-toggle="tab" data-bs-target="#comms-panel" type="button" role="tab" style="font-size: 0.8rem;">Club Comms</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link fw-bold border-0 text-uppercase tracking-wider py-2 px-3 small" id="lounge-tab" data-bs-toggle="tab" data-bs-target="#lounge-panel" type="button" role="tab" style="font-size: 0.8rem;">General Chat</button>
-      </li>
-    </ul>
+                <div id="currentBookCard" class="card shadow-sm border-0 overflow-hidden bg-light" style="display: none;">
+                    <div class="row g-0">
+                        <div class="col-md-3 col-lg-2 d-flex align-items-center justify-content-center p-3 bg-white border-end">
+                            <img id="currentBookCover" src="" alt="Book Cover" class="img-fluid rounded shadow-sm" style="max-height: 200px; object-fit: contain;">
+                        </div>
 
-    <div class="tab-content" id="chatTabsContent">
-      
-      <!-- general comms -->
-      <div class="tab-pane fade show active" id="comms-panel" role="tabpanel" aria-labelledby="comms-tab">
-        <!-- pinned message -->
-        <div class="card shadow-sm border-start border-4 border-primary mb-3 bg-white">
-          <div class="card-body p-3">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <span class="badge bg-primary-subtle text-primary fw-semibold small">Pinned Notice</span>
-              <small class="text-muted">2 days ago</small>
+                        <div class="col-md-9 col-lg-10 p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <h4 id="currentBookTitle" class="h3 fw-bold text-dark mb-1">Book Title</h4>
+                                <p id="currentBookAuthor" class="fs-5 text-muted mb-3">by Author Name</p>
+                                <p id="currentBookDescription" class="text-secondary mb-4 leading-relaxed">This is where the detailed book description summary text will be dynamically injected...</p>
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-3 align-items-center border-top pt-3 text-secondary small">
+                                <div class="d-flex align-items-center">
+                                    <span class="fw-bold text-dark me-2">Next Meeting:</span>
+                                    <span id="currentBookMeeting">Meeting Details Placeholder</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="noBookFallback" class="p-4 text-center bg-light rounded text-muted" style="display: none;">
+                    This club is not currently reading a book. Check back soon!
+                </div>
             </div>
-            <h5 class="fw-bold fs-6 mb-1">Next Meeting Details</h5>
-            <p class="card-text text-secondary small mb-0">We are meeting at the physical hub in JHB city center for the Chapter 4-6 breakdown. Bring notes!</p>
-          </div>
         </div>
-
-        <!-- poll -->
-        <div class="card shadow-sm border-0 mb-3 bg-white">
-          <div class="card-body p-3">
-            <span class="badge bg-warning-subtle text-warning-emphasis fw-semibold small mb-2">Active Poll</span>
-            <h5 class="fw-bold fs-6 mb-2">Vote for Next Month's Radical Read:</h5>
-            
-            <form id="demoPollForm" onsubmit="event.preventDefault();">
-              <div class="form-check mb-2 small">
-                <input class="form-check-input" type="radio" name="pollOption" id="pollOpt1" checked>
-                <label class="form-check-label text-dark" for="pollOpt1">
-                  <em>The Wretched of the Earth</em> – Frantz Fanon
-                </label>
-              </div>
-              <div class="form-check mb-3 small">
-                <input class="form-check-input" type="radio" name="pollOption" id="pollOpt2">
-                <label class="form-check-label text-dark" for="pollOpt2">
-                  <em>Revolutionary Suicide</em> – Huey P. Newton
-                </label>
-              </div>
-              <button type="button" class="btn btn-sm btn-outline-dark w-100 fw-semibold" onclick="this.textContent='Vote Submitted! Thanks.'; this.disabled=true;">Submit Vote</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <!-- general chat -->
-
-      <div class="tab-pane fade" id="lounge-panel" role="tabpanel" aria-labelledby="lounge-tab">
-        <div class="card shadow-sm border-0 bg-white">
-          
-          <div id="chatMessageStream" class="card-body p-3 overflow-y-auto" style="height: 320px; background-color: #f8f9fa;">
-            
-          </div>
-          
-          <div class="card-footer bg-white p-2 border-top-0">
-            <form id="loungeChatForm" class="input-group input-group-sm">
-              <input type="text" id="chatMessageInput" class="form-control border-light-subtle py-2" placeholder="Send a message to the lounge..." autocomplete="off">
-              <button class="btn btn-dark px-3 fw-semibold" type="submit">Send</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
     </div>
 
-  </div>
-</div>
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-12 px-5">
+                <ul class="nav nav-tabs mb-3 border-0 ps-3" id="chatTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active fw-bold border-0 text-uppercase tracking-wider py-2 px-3 small" id="comms-tab" data-bs-toggle="tab" data-bs-target="#comms-panel" type="button" role="tab" style="font-size: 0.8rem;">Club Comms</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link fw-bold border-0 text-uppercase tracking-wider py-2 px-3 small" id="lounge-tab" data-bs-toggle="tab" data-bs-target="#lounge-panel" type="button" role="tab" style="font-size: 0.8rem;">General Chat</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link fw-bold border-0 text-uppercase tracking-wider py-2 px-3 small" id="archive-tab" data-bs-toggle="tab" data-bs-target="#archive-panel" type="button" role="tab" style="font-size: 0.8rem;">Archives</button>
+                    </li>
+                </ul>
 
-    <!-- Footer -->
+                <div class="tab-content" id="chatTabsContent">
+                    <div class="tab-pane fade show active" id="comms-panel" role="tabpanel" aria-labelledby="comms-tab">
+                        <div class="card shadow-sm border-start border-4 border-primary mb-3 bg-white">
+                            <div class="card-body p-3">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-primary-subtle text-primary fw-semibold small">Pinned Notice</span>
+                                    <small class="text-muted">2 days ago</small>
+                                </div>
+                                <h5 class="fw-bold fs-6 mb-1">Next Meeting Details</h5>
+                                <p class="card-text text-secondary small mb-0">We are meeting at the physical hub in JHB city center for the Chapter 4-6 breakdown. Bring notes!</p>
+                            </div>
+                        </div>
+
+                        <div class="card shadow-sm border-0 mb-3 bg-white">
+                            <div class="card-body p-3">
+                                <span class="badge bg-warning-subtle text-warning-emphasis fw-semibold small mb-2">Active Poll</span>
+                                <h5 class="fw-bold fs-6 mb-2">Vote for Next Month's Read:</h5>
+
+                                <form id="demoPollForm" onsubmit="event.preventDefault();">
+                                    <div class="form-check mb-2 small">
+                                        <input class="form-check-input" type="radio" name="pollOption" id="pollOpt1" checked>
+                                        <label class="form-check-label text-dark" for="pollOpt1">
+                                            <em>The Wretched of the Earth</em> – Frantz Fanon
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-3 small">
+                                        <input class="form-check-input" type="radio" name="pollOption" id="pollOpt2">
+                                        <label class="form-check-label text-dark" for="pollOpt2">
+                                            <em>Revolutionary Suicide</em> – Huey P. Newton
+                                        </label>
+                                    </div>
+                                    <button type="button" class="btn btn-sm btn-outline-dark w-100 fw-semibold" onclick="this.textContent='Vote Submitted! Thanks.'; this.disabled=true;">Submit Vote</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="lounge-panel" role="tabpanel" aria-labelledby="lounge-tab">
+                        <div class="card shadow-sm border-0 bg-white">
+                            <div id="chatMessageStream" class="card-body p-3 overflow-y-auto" style="height: 320px; background-color: #f8f9fa;"></div>
+                            <div class="card-footer bg-white p-2 border-top-0">
+                                <form id="loungeChatForm" class="input-group input-group-sm">
+                                    <input type="text" id="chatMessageInput" class="form-control border-light-subtle py-2" placeholder="Send a message to the lounge..." autocomplete="off">
+                                    <button class="btn btn-dark px-3 fw-semibold" type="submit">Send</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="archive-panel" role="tabpanel" aria-labelledby="archive-tab">
+                        <div class="row g-4">
+                            <div class="col-md-7">
+                                <div class="card shadow-sm border-0 bg-white p-3 h-100">
+                                    <h5 class="fw-bold fs-6 mb-2">July Book Discussion Recording</h5>
+                                    <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm bg-dark mb-2">
+                                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="Book Club Discussion Player" allowfullscreen></iframe>
+                                    </div>
+                                    <p class="small text-muted mb-0">Recorded Live via The Forge JHB Hub Panel on July 24, 2026.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <div class="card shadow-sm border-0 bg-white p-3 h-100">
+                                    <h5 class="fw-bold fs-6 mb-3">Past Reads History</h5>
+
+                                    <div class="d-flex flex-column gap-3">
+                                        <div class="d-flex align-items-center p-2 rounded bg-light border-start border-3 border-success">
+                                            <img src="images/books/decolonial-marxism.jpg" style="width: 40px; height: 55px; object-fit: contain;" class="me-3 rounded shadow-sm">
+                                            <div>
+                                                <span class="badge bg-success-subtle text-success fw-bold p-1 mb-1" style="font-size: 0.65rem;">July 2026</span>
+                                                <h6 class="fw-bold small text-dark mb-0">Decolonial Marxism</h6>
+                                                <a href="https://youtu.be/zScVedEiPNI?si=tY9pApmAzieWsHb8" class="small text-decoration-none text-primary fw-semibold" onclick="event.preventDefault();">▷ Now Playing</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex align-items-center p-2 rounded bg-light opacity-75">
+                                            <img src="images/books/womb-city.jpg" style="width: 40px; height: 55px; object-fit: contain;" class="me-3 rounded shadow-sm">
+                                            <div>
+                                                <span class="badge bg-secondary-subtle text-secondary fw-bold p-1 mb-1" style="font-size: 0.65rem;">June 2026</span>
+                                                <h6 class="fw-bold small text-dark mb-0">Womb City</h6>
+                                                <small class="text-muted d-block" style="font-size: 0.75rem;">➝ Watch Recording</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex align-items-center p-2 rounded bg-light opacity-75">
+                                            <img src="images/books/flying-cows.jpg" style="width: 40px; height: 55px; object-fit: contain;" class="me-3 rounded shadow-sm">
+                                            <div>
+                                                <span class="badge bg-secondary-subtle text-secondary fw-bold p-1 mb-1" style="font-size: 0.65rem;">May 2026</span>
+                                                <h6 class="fw-bold small text-dark mb-0">Flying Cows and Other Traumas</h6>
+                                                <small class="text-muted d-block" style="font-size: 0.75rem;">➝ Watch Recording</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="bg-dark text-light py-4 mt-5 border-top border-secondary">
         <div class="container">
             <div class="row align-items-center">
-            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                <small class="text-secondary">&copy; 2026 <span class="text-success fw-bold">The Book Connect</span>. All rights reserved.</small>
-            </div>
-
-            <div class="col-md-6 text-center text-md-end">
-                <small class="text-secondary">Centering and promoting African literature, one community at a time.</small>
-            </div>
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <small class="text-secondary">&copy; 2026 <span class="text-success fw-bold">The Book Connect</span>. All rights reserved.</small>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <small class="text-secondary">Centering and promoting African literature, one community at a time.</small>
+                </div>
             </div>
         </div>
     </footer>
 
     <div class="modal fade" id="bookDetailModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-md">
-    <div class="modal-content border-0 shadow">
-      <div class="modal-header border-0 bg-dark text-light">
-        <h5 class="modal-title fw-bold" id="modalBookTitle">Book Title</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dist="modal" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body p-4">
-        <div class="row align-items-start">
-          <div class="col-sm-5 text-center mb-3 mb-sm-0">
-            <img id="modalBookCover" src="" class="img-fluid rounded shadow-sm" alt="Book Cover" style="max-height: 240px; object-fit: cover;">
-          </div>
-          <div class="col-sm-7">
-            <p class="text-secondary fw-semibold mb-1" id="modalBookAuthor">By Author Name</p>
-            <span class="badge bg-success mb-3" id="modalBookGenre">Genre</span>
-            <p class="small text-muted mb-0" id="modalBookDesc">Book description paragraph goes here...</p>
-          </div>
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0 bg-dark text-light">
+                    <h5 class="modal-title fw-bold" id="modalBookTitle">Book Title</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dist="modal" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row align-items-start">
+                        <div class="col-sm-5 text-center mb-3 mb-sm-0">
+                            <img id="modalBookCover" src="" class="img-fluid rounded shadow-sm" alt="Book Cover" style="max-height: 240px; object-fit: cover;">
+                        </div>
+                        <div class="col-sm-7">
+                            <p class="text-secondary fw-semibold mb-1" id="modalBookAuthor">By Author Name</p>
+                            <span class="badge bg-success mb-3" id="modalBookGenre">Genre</span>
+                            <p class="small text-muted mb-0" id="modalBookDesc">Book description paragraph goes here...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 bg-light">
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-dark btn-sm" id="modalMarkReadBtn">Mark as Read</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="modal-footer border-0 bg-light">
-        <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-dark btn-sm" id="modalMarkReadBtn">Mark as Read</button>
-      </div>
     </div>
-  </div>
-</div>
 
-    <!-- Scripts -->
     <script src="plugins/jquery/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="scripts/data.js"></script>

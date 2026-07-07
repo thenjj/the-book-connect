@@ -12,7 +12,7 @@ const theBookConnectDB = {
             blurb: `Raised by a distant father and an understanding but overprotective mother, Vivek suffers disorienting blackouts, moments of disconnection between self and surroundings. As adolescence gives way to adulthood, Vivek finds solace in friendships with the warm,boisterous daughters of the Nigerwives, foreign-born women married to Nigerian men.
             
             But Vivek’s closest bond is with Osita, the worldly, high-spirited cousin whose teasing confidence masks a guarded private life. As theirrelationship deepens—and Osita struggles to understand Vivek’s escalating crisis—the mystery gives way to a heart-stopping act ofviolence in a moment of exhilarating freedom.`,
-            tags: ["Top Pick", "Contemporary"]
+            tags: ["LGBTQIA+", "Contemporary"]
         },
         {
             id: "lit-2",
@@ -20,7 +20,7 @@ const theBookConnectDB = {
             author: "Helen Oyeyemi",
             coverImage: "images/books/what-is-not-yours.jpg",
             genre: "Literary Fiction",
-            tags: ["Must Read", "Surreal"]
+            tags: ["Short Stories", "Surreal"]
         },
         {
             id: "lit-3",
@@ -28,7 +28,7 @@ const theBookConnectDB = {
             author: "Eloghosa Osunde",
             coverImage: "images/books/vagabonds.jpg",
             genre: "Literary Fiction",
-            tags: ["Award Winner", "Lagos"]
+            tags: ["Short Stories", "LGBTQIA+"]
         },
         {
             id: "lit-4",
@@ -44,7 +44,7 @@ const theBookConnectDB = {
             author: "Yaa Gyasi",
             coverImage: "images/books/transcendent-kingdom.jpg",
             genre: "Literary Fiction",
-            tags: ["Bestseller", "Diaspora"]
+            tags: ["Contemporary", "Diaspora"]
         },
         {
             id: "lit-6",
@@ -52,7 +52,7 @@ const theBookConnectDB = {
             author: "Ayòbámi Adébáyò",
             coverImage: "images/books/stay-with-me.jpg",
             genre: "Literary Fiction",
-            tags: ["Book Club Pick"]
+            tags: ["Literary"]
         },
 
         // fantasy 
@@ -63,10 +63,8 @@ const theBookConnectDB = {
             author: "Philisiwe Twijnstra",
             coverImage: "images/books/flying-cows.jpg",
             genre: "Fantasy",
-            blurb: `This collection of short stories explores the breadth of magical realism, speculative fiction and fantasy. Twijnstra portrays women succeeding in the face of brutality. The protagonists – black women – are thrust into magical, terrifying, spellbinding worlds., with stories set in the past, present and future.
-            
-            Inspired by the haunting allure of Her Body and Other Parties, the raw intensity of Freshwater and the unsettling atmosphere of Intruders, these stories create a bold, darkly imaginative realm where survival is redefined and power is claimed on unexpected terms. Flying Cows and Other Traumas takes readers on a journey through surreal, unsettling worlds where the ordinary is disrupted by strange, malevolent forces. In this collection, Twijnstra explores themes of family dysfunction, resilience and through a black feminist lens. Set in black South African townships and imagined African kingdoms, the stories follow each protagonist through different stories where she faces brutality and emerge victorious.`,
-            tags: ["Magical Realism", "Trending"]
+            blurb: `This collection of short stories explores the breadth of magical realism, speculative fiction and fantasy. Twijnstra portrays women succeeding in the face of brutality. The protagonists – black women – are thrust into magical, terrifying, spellbinding worlds., with stories set in the past, present and future.`,
+            tags: ["Magical Realism", "New Release"]
         },
         {
             id: "fan-2",
@@ -74,7 +72,7 @@ const theBookConnectDB = {
             author: "Nnedi Okorafor",
             coverImage: "images/books/who-fears-death.jpg",
             genre: "Fantasy",
-            tags: ["Sci-Fantasy", "Award Winner"]
+            tags: ["Africafuturism", "Sci-Fi"]
         },
         {
             id: "fan-3",
@@ -82,7 +80,7 @@ const theBookConnectDB = {
             author: "Tomi Adeyemi",
             coverImage: "images/books/children-of-blood.jpg",
             genre: "Fantasy",
-            tags: ["Epic Fantasy", "Bestseller"]
+            tags: ["Dark", "Young Adult"]
         },
         {
             id: "fan-4",
@@ -90,7 +88,7 @@ const theBookConnectDB = {
             author: "Lauren Beukes",
             coverImage: "images/books/zoo-city.jpg",
             genre: "Fantasy",
-            tags: ["Urban Fantasy", "Jozi"]
+            tags: ["Urban Fantasy", "Johannesburg"]
         },
         {
             id: "fan-5",
@@ -98,7 +96,7 @@ const theBookConnectDB = {
             author: "Evan Winter",
             coverImage: "images/books/the-rage-of-dragons.jpg",
             genre: "Fantasy",
-            tags: ["High Fantasy", "Action"]
+            tags: ["Tense", "Dark"]
         },
         {
             id: "fan-6",
@@ -106,7 +104,7 @@ const theBookConnectDB = {
             author: "Suyi Davies Okungbowa",
             coverImage: "images/books/son-of-the-storm.jpg",
             genre: "Fantasy",
-            tags: ["Epic Fantasy"]
+            tags: ["Mysterious"]
         },
 
         // horror
@@ -119,10 +117,7 @@ const theBookConnectDB = {
             genre: "Horror/Thriller",
             blurb: `This genre-bending Afrofuturist horror novel blends The Handmaid’s Tale with Get Out in an adrenaline-packed, cyberpunk, body-hopping ghost story exploring motherhood, memory, and a woman’s right to her own body.
             
-            Nelah seems to have it all: fame, wealth, and a long-awaited daughter. But, trapped in a loveless marriage to a policeman who uses a microchip to monitor her every move, Nelah’s perfect life is precarious. When a tryst ends in an accidental death, Nelah’s life spirals out of control as she goes to desperate lengths to hide the killing and save the life of her yet-to-be-born daughter who is growing in one of the government Wombcubators, daring to hope that she can keep one last secret.
-            
-            Set in a future Botswana, a cruel futuristic surveillance state where bodies are a government-issued resource, this harrowing story is a twisty, nail-biting commentary on
-            power, and bodily autonomy. In this devastatingly timely debut novel, acclaimed novelist Tlotlo Tsamaase asks, just how far must a woman go to bring the whole system crashing down?`,
+            Nelah seems to have it all: fame, wealth, and a long-awaited daughter. But, trapped in a loveless marriage to a policeman who uses a microchip to monitor her every move, Nelah’s perfect life is precarious. When a tryst ends in an accidental death, Nelah’s life spirals out of control as she goes to desperate lengths to hide the killing and save the life of her yet-to-be-born daughter who is growing in one of the government Wombcubators, daring to hope that she can keep one last secret.`,
             tags: ["Cyberpunk", "Sci-Fi Horror"]
         },
         {
@@ -139,7 +134,7 @@ const theBookConnectDB = {
             author: "Oyinkan Braithwaite",
             coverImage: "images/books/my-sister-the.jpg",
             genre: "Horror/Thriller",
-            tags: ["Satire", "Bestseller"]
+            tags: ["Bestseller"]
         },
         {
             id: "hor-4",
@@ -147,7 +142,7 @@ const theBookConnectDB = {
             author: "T.L. Huchu",
             coverImage: "images/books/library-of-the-dead.jpg",
             genre: "Horror/Thriller",
-            tags: ["Dark Fantasy", "Mystery"]
+            tags: ["Mystery"]
         },
         {
             id: "hor-5",
@@ -155,7 +150,7 @@ const theBookConnectDB = {
             author: "Tade Thompson",
             coverImage: "images/books/rosewater.jpg",
             genre: "Horror/Thriller",
-            tags: ["Sci-Fi Thriller", "Alien"]
+            tags: ["Sci-Fi"]
         },
         {
             id: "hor-6",
@@ -163,7 +158,7 @@ const theBookConnectDB = {
             author: "Nicky Drayden",
             coverImage: "images/books/prey-of-gods.jpg",
             genre: "Horror/Thriller",
-            tags: ["Sci-Fi Horror"]
+            tags: ["Sci-Fi"]
         },
 
         // non-fiction
@@ -185,13 +180,7 @@ const theBookConnectDB = {
             blurb: `If the Mandelas were the generals in the fight for black liberation, the Mashininis were the foot soldiers. Theirs is a story of exile, imprisonment, torture and loss, but also
             of dignity, courage and strength in the face of appalling adversity. Originally published in the UK and USA to critical acclaim, A Burning Hunger tells a deeply moving human story and stands as one of the seminal books about the struggle against apartheid.
 
-            On 16 June 1976, the youth of Soweto rose up in protest against a new rule making Afrikaans, the language of their oppressors, the medium of instruction in their schools. Tsietsi Mashinini, a charismatic seventeen-year-old high school student, led them in demonstrations that quickly became the most significant uprising in South Africa’s history. His actions that day set in motion a chain of events that would forever change South Africa, define his family and transform their lives.
-            
-            Joseph and Nomkhitha Mashinini and their twelve other children were drawn into the struggle, becoming immersed in almost every facet of the fight for liberation, from guerrilla warfare to urban insurrection. Although Joseph and Nomkhitha were peaceful citizens who had never been involved in politics, five of their sons became leaders in the anti-apartheid movement. Each member of the family paid a price, whether through imprisonment, torture, exile or separation. Together, they embodied the courage of a generation that refused to accept the world as it was given to them.
-            
-            This is an extraordinary story of a family that became a symbol of resistance; a tale of unimaginable adversity met with dignity and defiance and an example of what ordinary people are capable of when injustice becomes intolerable. Basing her narrative on extensive research and interviews, Lynda Schuster richly portrays the Mashininis and in so doing reveals black South Africa during a time of momentous change.
-
-            This is also a story for right now. Fifty years after the Soweto Uprising, South Africa’s hard-won freedoms are not guaranteed. Every generation must decide, for itself, what it is willing to stand for and what it is willing to stand up against. A Burning Hunger is a gripping human drama and an essential piece of South African history, as urgent, alive and necessary as the moment it chronicles.`,
+            This is an extraordinary story of a family that became a symbol of resistance; a tale of unimaginable adversity met with dignity and defiance and an example of what ordinary people are capable of when injustice becomes intolerable. Basing her narrative on extensive research and interviews, Lynda Schuster richly portrays the Mashininis and in so doing reveals black South Africa during a time of momentous change.`,
             tags: ["Biography", "Apartheid"]
         },
         {
@@ -208,7 +197,7 @@ const theBookConnectDB = {
             author: "Walter Rodney",
             coverImage: "images/books/how-europe-underdeveloped.jpg",
             genre: "Non-Fiction",
-            tags: ["Essential", "Economics"]
+            tags: ["Essential"]
         },
         {
             id: "non-5",

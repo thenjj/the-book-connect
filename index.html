@@ -7,197 +7,171 @@
     <title>The Book Connect</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
-    <!-- Web Application Manifest -->
     <link rel="manifest" href="manifest.json">
 
-    <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Markup Kick Start">
     <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
 
-    <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Markup Kick Start">
     <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
 
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
     <meta name="msapplication-TileColor" content="#ff0000">
 
-    <!-- Color the status bar on mobile devices -->
     <meta name="theme-color" content="#ff0000">
-
-    <!-- Styles -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/css/app.css">
-    
-</head> 
+</head>
 
 <body>
 
-    <!-- Navbar -->
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3">
-    <div class="container">
-    <a class="navbar-brand fw-bold text-success" href="index.html">The Book Connect</a>
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success" href="index.html">The Book Connect</a>
 
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="club-detail.html">Book Clubs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="admin.html">Settings</a>
-        </li>
-      </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <div class="dropdown">
-        <form class="d-flex position-relative" style="width: 250px;" onsubmit="event.preventDefault();">
-          <input class="form-control me-2" type="search" placeholder="Search books..." id="navSearchInput" autocomplete="off">
-  
-          <div id="searchDropdownPreview" class="position-absolute w-100 bg-white border rounded shadow mt-5 d-none" style="z-index: 1050; max-height: 300px; overflow-y: auto; top: 0; left: 0;">
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="club-detail.html">Book Clubs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">Settings</a>
+                    </li>
+                </ul>
+
+                <div class="dropdown">
+                    <form class="d-flex position-relative" style="width: 250px;" onsubmit="event.preventDefault();">
+                        <input class="form-control me-2" type="search" placeholder="Search books..." id="navSearchInput" autocomplete="off">
+                        <div id="searchDropdownPreview" class="position-absolute w-100 bg-white border rounded shadow mt-5 d-none" style="z-index: 1050; max-height: 300px; overflow-y: auto; top: 0; left: 0;"></div>
+                    </form>
+                    <ul class="dropdown-menu dropdown-menu-end w-100 mt-1" id="searchSuggestions" style="max-height: 300px; overflow-y: auto;"></ul>
+                </div>
+            </div>
         </div>
-        </form>
-        
-        <ul class="dropdown-menu dropdown-menu-end w-100 mt-1" id="searchSuggestions" style="max-height: 300px; overflow-y: auto;">
-          </ul>
-      </div>
-
-    </div>
-    </div>
     </nav>
 
-    <!-- Banner -->
+    <div id="heroFeaturedCarousel" class="carousel slide bg-dark text-light py-5 mb-5" data-bs-ride="carousel">
+        <div class="carousel-inner container">
 
-        <div id="heroFeaturedCarousel" class="carousel slide bg-dark text-light py-5 mb-5" data-bs-ride="carousel">
-      <div class="carousel-inner container">
-        
-        <div class="carousel-item active">
-          <div class="row align-items-center py-4">
-            <div class="col-md-4 text-center">
-              <img src="images/books/who-fears-death.jpg" class="img-fluid rounded shadow" alt="Who Fears Death Cover" style="max-height: 350px;">
+            <div class="carousel-item active">
+                <div class="row align-items-center py-4">
+                    <div class="col-md-4 text-center">
+                        <img src="images/books/who-fears-death.jpg" class="img-fluid rounded shadow" alt="Who Fears Death Cover" style="max-height: 350px;">
+                    </div>
+                    <div class="col-md-8 text-center text-md-start mt-4 mt-md-0">
+                        <span class="badge bg-success mb-2">Featured Fantasy</span>
+                        <h1 class="display-4 fw-bold">Who Fears Death</h1>
+                        <p class="lead text-secondary">By Nnedi Okorafor</p>
+                        <p class="mb-4">In a post-apocalyptic Africa where two weaponized tribes are locked in conflict, a child born of violence grows up to discover she is targeted by a powerful, deadly magic.</p>
+                        <button class="btn btn-success btn-lg px-4 me-2">Join Club Discussion</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-8 text-center text-md-start mt-4 mt-md-0">
-              <span class="badge bg-success mb-2">Featured Fantasy</span>
-              <h1 class="display-4 fw-bold">Who Fears Death</h1>
-              <p class="lead text-secondary">By Nnedi Okorafor</p>
-              <p class="mb-4">In a post-apocalyptic Africa where two weaponized tribes are locked in conflict, a child born of violence grows up to discover she is targeted by a powerful, deadly magic.</p>
-              <button class="btn btn-success btn-lg px-4 me-2">Join Club Discussion</button>
+
+            <div class="carousel-item">
+                <div class="row align-items-center py-4">
+                    <div class="col-md-4 text-center">
+                        <img src="images/books/how-europe-underdeveloped.jpg" class="img-fluid rounded shadow" alt="How Europe Underdeveloped Africa Cover" style="max-height: 350px;">
+                    </div>
+                    <div class="col-md-8 text-center text-md-start mt-4 mt-md-0">
+                        <span class="badge bg-success mb-2">Featured Non-Fiction</span>
+                        <h1 class="display-4 fw-bold">How Europe Underdeveloped Africa</h1>
+                        <p class="lead text-secondary">By Walter Rodney</p>
+                        <p class="mb-4">A masterpiece of political economy analyzing how structural exploitation by European powers directly derailed and paralyzed the independent growth of the African continent.</p>
+                        <a href="club-detail.html?id=club-1" class="btn btn-success btn-lg px-4 me-2">Join Club Discussion</a>
+                    </div>
+                </div>
             </div>
-          </div>
+
         </div>
 
-        <div class="carousel-item">
-          <div class="row align-items-center py-4">
-            <div class="col-md-4 text-center">
-              <img src="images/books/how-europe-underdeveloped.jpg" class="img-fluid rounded shadow" alt="How Europe Underdeveloped Africa Cover" style="max-height: 350px;">
-            </div>
-            <div class="col-md-8 text-center text-md-start mt-4 mt-md-0">
-              <span class="badge bg-success mb-2">Featured Non-Fiction</span>
-              <h1 class="display-4 fw-bold">How Europe Underdeveloped Africa</h1>
-              <p class="lead text-secondary">By Walter Rodney</p>
-              <p class="mb-4">A masterpiece of political economy analyzing how structural exploitation by European powers directly derailed and paralyzed the independent growth of the African continent.</p>
-              <button class="btn btn-success btn-lg px-4 me-2">Join Club Discussion</button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#heroFeaturedCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#heroFeaturedCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroFeaturedCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroFeaturedCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 
-    <!-- Book Showcase -->
+    <main class="container my-5">
+        <section class="mb-5">
+            <h2 class="fw-bold mb-3 border-bottom pb-2">Literary Fiction</h2>
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-3 mobile-carousel-row" id="literary-fiction-row"></div>
+        </section>
 
-   <main class="container my-5">
-  
-  <section class="mb-5">
-    <h2 class="fw-bold mb-3 border-bottom pb-2">Literary Fiction</h2>
-    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-3 mobile-carousel-row" id="literary-fiction-row"></div>
-  </section>
+        <section class="mb-5">
+            <h2 class="fw-bold mb-3 border-bottom pb-2">Fantasy</h2>
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-3 mobile-carousel-row" id="fantasy-row"></div>
+        </section>
 
-  <section class="mb-5">
-    <h2 class="fw-bold mb-3 border-bottom pb-2">Fantasy</h2>
-    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-3 mobile-carousel-row" id="fantasy-row"></div>
-  </section>
+        <section class="mb-5">
+            <h2 class="fw-bold mb-3 border-bottom pb-2">Horror & Thriller</h2>
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-3 mobile-carousel-row" id="horror-row"></div>
+        </section>
 
-  <section class="mb-5">
-    <h2 class="fw-bold mb-3 border-bottom pb-2">Horror & Thriller</h2>
-    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-3 mobile-carousel-row" id="horror-row"></div>
-  </section>
-
-  <section class="mb-5">
-    <h2 class="fw-bold mb-3 border-bottom pb-2">Non-Fiction</h2>
-    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-3 mobile-carousel-row" id="non-fiction-row"></div>
-  </section>
-
-</main>
+        <section class="mb-5">
+            <h2 class="fw-bold mb-3 border-bottom pb-2">Non-Fiction</h2>
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-3 mobile-carousel-row" id="non-fiction-row"></div>
+        </section>
+    </main>
 
     <footer class="bg-dark text-light py-4 mt-5 border-top border-secondary">
         <div class="container">
             <div class="row align-items-center">
-            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                <small class="text-secondary">&copy; 2026 <span class="text-success fw-bold">The Book Connect</span>. All rights reserved.</small>
-            </div>
-
-            <div class="col-md-6 text-center text-md-end">
-                <small class="text-secondary">Centering and promoting African literature, one community at a time.</small>
-            </div>
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <small class="text-secondary">&copy; 2026 <span class="text-success fw-bold">The Book Connect</span>. All rights reserved.</small>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <small class="text-secondary">Centering and promoting African literature, one community at a time.</small>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Book search -->
-
     <div class="modal fade" id="bookDetailModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-md">
-    <div class="modal-content border-0 shadow">
-      <div class="modal-header border-0 bg-dark text-light">
-        <h5 class="modal-title fw-bold" id="modalBookTitle">Book Title</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dist="modal" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body p-4">
-        <div class="row align-items-start">
-          <div class="col-sm-5 text-center mb-3 mb-sm-0">
-            <img id="modalBookCover" src="" class="img-fluid rounded shadow-sm" alt="Book Cover" style="max-height: 240px; object-fit: cover;">
-          </div>
-          <div class="col-sm-7">
-            <p class="text-secondary fw-semibold mb-1" id="modalBookAuthor">By Author Name</p>
-            <span class="badge bg-success mb-3" id="modalBookGenre">Genre</span>
-            <p class="small text-muted mb-0" id="modalBookDesc">Book description paragraph goes here...</p>
-          </div>
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0 bg-dark text-light">
+                    <h5 class="modal-title fw-bold" id="modalBookTitle">Book Title</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dist="modal" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row align-items-start">
+                        <div class="col-sm-5 text-center mb-3 mb-sm-0">
+                            <img id="modalBookCover" src="" class="img-fluid rounded shadow-sm" alt="Book Cover" style="max-height: 240px; object-fit: cover;">
+                        </div>
+                        <div class="col-sm-7">
+                            <p class="text-secondary fw-semibold mb-1" id="modalBookAuthor">By Author Name</p>
+                            <span class="badge bg-success mb-3" id="modalBookGenre">Genre</span>
+                            <p class="small text-muted mb-0" id="modalBookDesc">Book description paragraph goes here...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 bg-light">
+                    <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-dark btn-sm" id="modalMarkReadBtn">Mark as Read</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="modal-footer border-0 bg-light">
-        <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-dark btn-sm" id="modalMarkReadBtn">Mark as Read</button>
-      </div>
     </div>
-  </div>
-</div>
 
-    <!-- Scripts -->
     <script src="plugins/jquery/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="scripts/data.js"></script>

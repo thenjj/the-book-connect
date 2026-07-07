@@ -342,3 +342,63 @@ document.addEventListener('DOMContentLoaded', function() {
     renderLoungeChatStream();
     setupChatFormListener();
 });
+
+// settings
+
+function setupAdminSettingsDashboard() {
+    const adminForm = document.getElementById('adminClubSettingsForm');
+    if (!adminForm) return;
+
+    let clubsArray = [];
+    if (typeof theBookConnectDB !== 'undefined' && theBookConnectDB.bookClubs) {
+        clubsArray = theBookConnectDB.bookClubs;
+    }
+
+    const demoClub = clubsArray.find(c => c.id === 'club-1');
+    if (!demoClub) {
+        console.error("Management targets unresolvable from database stack references.");
+        return;
+    }
+
+    document.getElementById('adminClubName').value = demoClub.name || '';
+    document.getElementById('adminClubLocation').value = demoClub.location || '';
+    document.getElementById('adminClubBanner').value = demoClub.imageBanner || '';
+    document.getElementById('adminClubAbout').value = demoClub.about || '';
+
+    adminForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const saveBtn = document.getElementById('adminSaveBtn');
+        if (saveBtn) {
+            saveBtn.disabled = true;
+            saveBtn.textContent = 'Saving Changes...';
+        }
+
+        demoClub.name = document.getElementById('adminClubName').value.trim();
+        demoClub.location = document.getElementById('adminClubLocation').value.trim();
+        demoClub.imageBanner = document.getElementById('adminClubBanner').value.trim();
+        demoClub.about = document.getElementById('adminClubAbout').value.trim();
+
+        if (typeof STORAGE_KEY !== 'undefined') {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(theBookConnectDB));
+            console.log("Database parameters committed securely to cache storage:", theBookConnectDB);
+        }
+
+        setTimeout(() => {
+            if (saveBtn) {
+                saveBtn.className = 'btn btn-success px-4 fw-semibold';
+                saveBtn.textContent = 'Saved Successfully! ✓';
+                
+                setTimeout(() => {
+                    saveBtn.className = 'btn btn-dark px-4 fw-semibold';
+                    saveBtn.textContent = 'Save Changes';
+                    saveBtn.disabled = false;
+                }, 2000);
+            }
+        }, 600);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    setupAdminSettingsDashboard();
+});
