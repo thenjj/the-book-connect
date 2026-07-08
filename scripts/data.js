@@ -40,8 +40,8 @@ const theBookConnectDB = {
         },
         {
             id: "lit-5",
-            title: "Transcendent Kingdom",
-            author: "Yaa Gyasi",
+            title: "The Secret Lives of Baba Segi's Wives",
+            author: "Lola Shoneyin",
             coverImage: "images/books/transcendent-kingdom.jpg",
             genre: "Literary Fiction",
             tags: ["Contemporary", "Diaspora"]

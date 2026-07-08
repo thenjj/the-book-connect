@@ -179,11 +179,13 @@ function displayBookClubDetails(clubId) {
     const bookCard = document.getElementById('currentBookCard');
     const fallbackBox = document.getElementById('noBookFallback');
 
-    const currentBookTitle = "How Europe Underdeveloped Africa";
-    const currentBookAuthor = "Walter Rodney";
-    const currentBookCover = "images/books/how-europe-underdeveloped.jpg";
-    const currentBookDesc = "A masterpiece of radical historical analysis exploring the intentional distortions of structural economic extraction across the African continent.";
-    const currentMeetingInfo = "Last Friday of the month, 18:30 PM at The Forge JHB";
+    const currentBookTitle = "The Death of Vivek Oji";
+    const currentBookAuthor = "Akwaeke Emezi";
+    const currentBookCover = "images/books/death-vivek.jpg";
+    const currentBookDesc = `Raised by a distant father and an understanding but overprotective mother, Vivek suffers disorienting blackouts, moments of disconnection between self and surroundings. As adolescence gives way to adulthood, Vivek finds solace in friendships with the warm,boisterous daughters of the Nigerwives, foreign-born women married to Nigerian men.
+            
+            But Vivek’s closest bond is with Osita, the worldly, high-spirited cousin whose teasing confidence masks a guarded private life. As theirrelationship deepens—and Osita struggles to understand Vivek’s escalating crisis—the mystery gives way to a heart-stopping act ofviolence in a moment of exhilarating freedom.`;
+    const currentMeetingInfo = "28 July, 12:30 PM at The Forge, JHB";
 
     if (bookCard && fallbackBox) {
         bookCard.style.display = 'block';
@@ -244,8 +246,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // club chat nonsense
 
 let baselineDemoMessages = [
-    { sender: "Thabo Molefe", username: "@thabo_reads", text: "Did everyone finish the Chapter 3 breakdown yet? That data layout was wild.", isMe: false },
-    { sender: "Kofi Silva", username: "@kofi_books", text: "Rodney's breakdown of economic extractions is hitting so hard right now.", isMe: false }
+    { sender: "Thabo Molefe", username: "@thabo_reads", text: "So, what exaclty is happening with Vivek? I don't think I'm getting it. How far are you guys?", isMe: false },
+    { sender: "Andi Silva", username: "@kofi_books", text: "Keep reading, you haven't seen anything yet!", isMe: false }
 ];
 
 function renderLoungeChatStream() {
@@ -256,7 +258,7 @@ function renderLoungeChatStream() {
 
     const avatarFallback = {
         "Thabo Molefe": "images/users/user-1.jpg",
-        "Kofi Silva": "images/users/user-2.jpg",
+        "Andi Silva": "images/users/user-2.jpg",
         "You": "images/users/user-4.jpg"
     };
 
